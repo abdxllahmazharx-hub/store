@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCPVPTiers | Official Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0f0f12;
+            --card-bg: #1a1a1f;
+            --accent: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+            --gold: #f59e0b;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navbar */
+        nav {
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(26, 26, 31, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { color: var(--text-dim); font-size: 1.2rem; }
+        .ip-box {
+            background: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px dashed var(--accent);
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        /* Store Grid */
+        .container {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 40px 20px;
+            width: 100%;
+        }
+
+        .rank-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, border 0.3s;
+            border: 1px solid #2a2a2a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .rank-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .rank-name { font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; }
+        .price { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
+        .price span { font-size: 1rem; color: var(--text-dim); }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 30px;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .features li { margin-bottom: 8px; }
+        .features li i { color: #10b981; margin-right: 8px; }
+
+        .buy-btn {
+            background: var(--accent);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover { background: var(--accent-hover); }
+
+        /* Media Section */
+        .media-section {
+            background: #111;
+            width: 100%;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .media-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .media-card {
+            background: #1a1a1f;
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+            border-left: 5px solid var(--gold);
+        }
+
+        footer {
+            padding: 40px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">HOME</a>
+        <a href="https://www.mcpvptiers.xyz">TIER LIST</a>
+        <a href="#store">STORE</a>
+        <a href="https://discord.gg/eJ79uTtqHd" target="_blank">DISCORD</a>
+    </nav>
+
+    <div class="hero">
+        <h1>MCPVPTiers Store</h1>
+        <p>Support the server and climb the rankings.</p>
+        <div class="ip-box" onclick="copyIP()">
+            IP: <span id="ip">mc.mcpvptiers.xyz</span> <i class="fas fa-copy"></i>
+        </div>
+    </div>
+
+    <div class="container" id="store">
+        <div class="rank-card">
+            <div>
+                <div class="rank-name" style="color: #55ff55;">VIP</div>
+                <div class="price">$0.59</div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> VIP Tag in Chat</li>
+                    <li><i class="fas fa-check"></i> Join full servers</li>
+                    <li><i class="fas fa-check"></i> Basic Cosmetics</li>
+                </ul>
+            </div>
+            <a href="#" class="buy-btn">PURCHASE</a>
+        </div>
+
+        <div class="rank-card">
+            <div>
+                <div class="rank-name" style="color: #00aaaa;">VIP+</div>
+                <div class="price">$0.99</div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> VIP+ Tag in Chat</li>
+                    <li><i class="fas fa-check"></i> Create 2 Plots</li>
+                    <li><i class="fas fa-check"></i> Priority Support</li>
+                </ul>
+            </div>
+            <a href="#" class="buy-btn">PURCHASE</a>
+        </div>
+
+        <div class="rank-card">
+            <div>
+                <div class="rank-name" style="color: #55ffff;">MVP</div>
+                <div class="price">$1.39</div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> MVP Tag in Chat</li>
+                    <li><i class="fas fa-check"></i> Access to /fly in Hub</li>
+                    <li><i class="fas fa-check"></i> 5 Mystery Boxes</li>
+                </ul>
+            </div>
+            <a href="#" class="buy-btn">PURCHASE</a>
+        </div>
+
+        <div class="rank-card" style="border-color: var(--accent);">
+            <div>
+                <div class="rank-name" style="color: #ff5555;">MVP+</div>
+                <div class="price">$1.99</div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> MVP+ Tag in Chat</li>
+                    <li><i class="fas fa-check"></i> Particle Effects</li>
+                    <li><i class="fas fa-check"></i> Map Selection</li>
+                </ul>
+            </div>
+            <a href="#" class="buy-btn">PURCHASE</a>
+        </div>
+
+        <div class="rank-card">
+            <div>
+                <div class="rank-name" style="color: #ffaa00;">MVP++</div>
+                <div class="price">$2.49 <span>/mo</span></div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> The Ultimate Rank</li>
+                    <li><i class="fas fa-check"></i> Private Games</li>
+                    <li><i class="fas fa-check"></i> Nickname Command</li>
+                </ul>
+            </div>
+            <a href="#" class="buy-btn">PURCHASE</a>
+        </div>
+    </div>
+
+    <section class="media-section">
+        <h2>Content Creator Ranks</h2>
+        <div class="media-grid">
+            <div class="media-card">
+                <h3 style="color: #ff5555;">MEDIA</h3>
+                <p>Requirements:</p>
+                <p><strong>1,000+ Subscribers</strong></p>
+                <p>Active uploads on the server.</p>
+            </div>
+            <div class="media-card" style="border-color: #ffaa00;">
+                <h3 style="color: #ffaa00;">FAMOUS</h3>
+                <p>Requirements:</p>
+                <p><strong>7,000+ Subscribers</strong></p>
+                <p>Strong community engagement.</p>
+            </div>
+        </div>
+        <p style="margin-top: 20px;">Apply via Discord to claim these ranks.</p>
+    </section>
+
+    <footer>
+        &copy; 2026 MCPVPTiers. We are not affiliated with Mojang AB.
+    </footer>
+
+    <script>
+        function copyIP() {
+            const ip = document.getElementById('ip').innerText;
+            navigator.clipboard.writeText(ip);
+            alert("Server IP copied: " + ip);
+        }
+    </script>
+</body>
+</html>
